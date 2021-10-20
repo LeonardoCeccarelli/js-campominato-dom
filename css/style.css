@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+/******************** 
+NAVBAR
+********************/
+nav {
+    height: 100px;
+    display: flex;
+    border-bottom: 2px solid black;
+    color: white;
+    background-color: #001533;
+}
+
+.nav_sx {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding-left: 20px;
+    flex-grow: 1;
+}
+
+.nav_sx img {
+    height: 80px;
+    width: 80px;
+    margin-right: 10px;
+}
+
+.nav_dx {
+    padding-right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.nav_dx h3 {
+    padding-right: 10px;
+}
+
+nav form select {
+    width: 150px;
+    margin-right: 10px;
+}
+
+nav form button {
+    width: 80px;
+    text-align: center;
+}
+
+/*******************
+SEZIONE QUADRATO GIOCO
+*******************/
+.container {
+    background-color: #7fffd4;
+    padding: 75px 0;
+}
+
+.square_container {
+    height: 500px;
+    width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.square_container.border_active {
+    border: 1px solid black;
+    box-shadow: 0 0 90px rgba(4, 0, 255, 0.6);
+}
+
+.square_container .box {
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+}
+
+.square_container .box.active {
+    background-color: #6495ed;
+    color: white;
+}
