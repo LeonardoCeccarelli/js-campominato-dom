@@ -50,20 +50,33 @@ nav {
 nav form select {
     width: 150px;
     margin-right: 10px;
-    cursor: pointer;
+}
+
+nav form select:focus-visible {
+    outline: none;
 }
 
 nav form button {
     width: 80px;
     text-align: center;
+}
+
+.my_input {
     cursor: pointer;
+    font-weight: bold;
+    padding: 8px 13px;
+    border-radius: 10px;
+    background-color: #001533;
+    border: 2px solid #7fffd4;
+    color: white;
 }
 
 /*******************
 SEZIONE QUADRATO GIOCO
 *******************/
 .main_container {
-    background-color: #7fffd4;
+    /* background-color: #7fffd4; */
+    background-image: linear-gradient(to right, #7fffd4, #2adaa2, #2adaa2, #7fffd4);
     padding: 75px 0;
 }
 
@@ -78,6 +91,7 @@ SEZIONE QUADRATO GIOCO
 .square_container.border_active {
     border: 1px solid black;
     box-shadow: 0 0 90px rgba(4, 0, 255, 0.6);
+    background-color: #7fffd4;
 }
 
 .square_container .box {
@@ -122,9 +136,10 @@ BANNER OVERLAY VITTORIA/SCONFITTA
 }
 
 .overlay_banner_content {
-    background-color: white;
+    background-color: #b3e5d4;
+    border: 2px solid black;
     border-radius: 20px;
-    padding: 30px;
+    padding: 35px;
 }
 
 .overlay_banner_content h2 {

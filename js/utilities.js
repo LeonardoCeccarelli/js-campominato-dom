@@ -93,7 +93,7 @@ function clickChangeColor() {
         this.classList.add("danger")
         indexLose++
     }
-    console.log(indexWin, indexLose);
+    // console.log(indexWin, indexLose);
 
     // Resetto il contenuto del banner
     bannerOverlay.innerHTML = ""
@@ -118,7 +118,7 @@ function clickChangeColor() {
                                     <button class="btn_banner" type="submit">Rigioca!</button>
                                 </form>
                             </div>`
-    console.log(resultClass, resultContent, resultScore);
+    // console.log(resultClass, resultContent, resultScore);
 }
 
 /**
