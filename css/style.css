@@ -71,6 +71,10 @@ nav form button {
     color: white;
 }
 
+.my_input:hover {
+    box-shadow: 0 0 10px #7fffd4;
+}
+
 /*******************
 SEZIONE QUADRATO GIOCO
 *******************/
@@ -157,6 +161,10 @@ BANNER OVERLAY VITTORIA/SCONFITTA
     cursor: pointer;
     background-color: orange;
     font-weight: bold;
+}
+
+.btn_banner:hover {
+    box-shadow: 0 0 10px black;
 }
 
 .c_win {

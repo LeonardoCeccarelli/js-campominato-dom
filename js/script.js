@@ -37,6 +37,8 @@ let rightCells;
 // Aggiungo l'evento al bottone che, se cliccato, mi genera il riquadro
 btnStartGame.addEventListener("click", function () {
 
+    indexWin = 0
+
     cellContainer.classList.add("border_active")
 
     // Creo costante che mi individua il valore della select
