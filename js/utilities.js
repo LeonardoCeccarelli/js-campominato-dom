@@ -82,7 +82,43 @@ function generateCellGrid(cellsNumber) {
  */
 
 function clickChangeColor() {
-    this.classList.toggle("active")
+
+    // Individuo la cella corrente cliccata
+    const currentCell = parseInt(this.textContent)
+
+    if (!cellsBomb.includes(currentCell)) {
+        this.classList.add("active")
+        indexWin++
+    } else {
+        this.classList.add("danger")
+        indexLose++
+    }
+    console.log(indexWin, indexLose);
+
+    // Resetto il contenuto del banner
+    bannerOverlay.innerHTML = ""
+
+    if (indexLose === 1) {
+        bannerOverlay.classList.add("active")
+        resultClass = "c_lose"
+        resultContent = "Hai perso!"
+        resultScore = `Hai ottenuto un punteggio di <span class="c_score"> ${indexWin}/${rightCells - totalBomb}</span>`
+    } else if (indexWin === (rightCells - totalBomb)) {
+        bannerOverlay.classList.add("active")
+        resultClass = "c_win"
+        resultContent = "Hai vinto!"
+        resultScore = `Hai ottenuto un punteggio di <span class="c_score">${indexWin}/${rightCells - totalBomb}</span>`
+    }
+
+    // Creo il contenuto del banner
+    bannerOverlay.innerHTML += `<div class="overlay_banner_content">
+                                <h2 class="${resultClass}">${resultContent}</h2>
+                                <p>${resultScore}</p>
+                                <form>
+                                    <button class="btn_banner" type="submit">Rigioca!</button>
+                                </form>
+                            </div>`
+    console.log(resultClass, resultContent, resultScore);
 }
 
 /**
@@ -99,12 +135,12 @@ function getRightNumBombs(nBomb, maxNumbRandom) {
 
     // uso while per riempire l'array di numeri casuali evitando
     // di inserirne 2 o + uguali
-    while (bombsArray.lenght < nBomb) {
+    while (bombsArray.length < nBomb) {
         const singleBomb = getRandomNums(1, maxNumbRandom)
 
-        const bombExisting = bombsArray.includes(singleBomb)
-
-        if (!bombExisting) {
+        // Verifico se il numero generato è presente nell'array
+        // se NO lo inserisco, altrimenti non faccio nulla
+        if (!bombsArray.includes(singleBomb)) {
             bombsArray.push(singleBomb)
         }
     }

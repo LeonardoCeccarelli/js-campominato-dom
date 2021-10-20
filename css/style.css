@@ -9,7 +9,7 @@ body {
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
 }
 
 /******************** 
@@ -50,17 +50,19 @@ nav {
 nav form select {
     width: 150px;
     margin-right: 10px;
+    cursor: pointer;
 }
 
 nav form button {
     width: 80px;
     text-align: center;
+    cursor: pointer;
 }
 
 /*******************
 SEZIONE QUADRATO GIOCO
 *******************/
-.container {
+.main_container {
     background-color: #7fffd4;
     padding: 75px 0;
 }
@@ -92,3 +94,66 @@ SEZIONE QUADRATO GIOCO
     background-color: #6495ed;
     color: white;
 }
+
+.square_container .box.danger {
+    background-color: red;
+    color: white;
+}
+
+/************************************
+BANNER OVERLAY VITTORIA/SCONFITTA
+************************************/
+
+.overlay_banner_container {
+    position: fixed;
+    z-index: 99;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    /* display: flex; */
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay_banner_container.active {
+    display: flex;
+}
+
+.overlay_banner_content {
+    background-color: white;
+    border-radius: 20px;
+    padding: 30px;
+}
+
+.overlay_banner_content h2 {
+    margin-bottom: 10px;
+}
+
+.overlay_banner_content p {
+    margin-bottom: 20px;
+}
+
+.btn_banner {
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid black;
+    cursor: pointer;
+    background-color: orange;
+    font-weight: bold;
+}
+
+.c_win {
+    color: green;
+}
+
+.c_lose {
+    color: red;
+}
+
+.c_score {
+    color: blue;
+    font-weight: bold;
+}
+
