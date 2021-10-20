@@ -59,6 +59,7 @@ function generateCellGrid(cellsNumber) {
 
     // creo il ciclo che mi crea nell'html tutte 
     // le celle
+
     for (let i = 0; i < cellsNumber; i++) {
         const numCell = cellsNumber[i];
 
@@ -69,6 +70,12 @@ function generateCellGrid(cellsNumber) {
         cell.style.width = sizeCell + "%"
         cell.style.height = sizeCell + "%"
         cell.textContent = i + 1
+
+        // Inserisco fin da subito una classe che mi identifica 
+        // che quella cella è una bomba
+        if (cellsBomb.includes(parseInt(cell.textContent))) {
+            cell.classList.add("single_bomb")
+        }
 
         cell.addEventListener("click", clickChangeColor)
 
@@ -98,16 +105,28 @@ function clickChangeColor() {
     // Resetto il contenuto del banner
     bannerOverlay.innerHTML = ""
 
+    // rintraccio tutte le caselle bomba
+    const nowCellsBomb = document.querySelectorAll(".single_bomb")
+    const listNowCellsBomb = nowCellsBomb.length
+
     if (indexLose === 1) {
         bannerOverlay.classList.add("active")
         resultClass = "c_lose"
         resultContent = "Hai perso!"
         resultScore = `Hai ottenuto un punteggio di <span class="c_score"> ${indexWin}/${rightCells - totalBomb}</span>`
+        // a fine gioco faccio apparire tutte le caselle bomba
+        for (let x = listNowCellsBomb - 1; x >= 0; x--) {
+            nowCellsBomb.item(x).className += " bg_all_bomb"
+        }
     } else if (indexWin === (rightCells - totalBomb)) {
         bannerOverlay.classList.add("active")
         resultClass = "c_win"
         resultContent = "Hai vinto!"
         resultScore = `Hai ottenuto un punteggio di <span class="c_score">${indexWin}/${rightCells - totalBomb}</span>`
+        // a fine gioco faccio apparire tutte le caselle bomba
+        for (let x = listNowCellsBomb - 1; x >= 0; x--) {
+            nowCellsBomb.item(x).className += " bg_all_bomb"
+        }
     }
 
     // Creo il contenuto del banner

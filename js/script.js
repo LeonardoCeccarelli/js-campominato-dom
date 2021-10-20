@@ -46,14 +46,12 @@ btnStartGame.addEventListener("click", function () {
 
     rightCells = checkCellNum(levelSelect)
 
-    generateCellGrid(rightCells)
-
     cellsBomb = getRightNumBombs(totalBomb, rightCells)
     cellsBomb.sort((a, b) => a - b)
     console.log(cellsBomb);
+
+    generateCellGrid(rightCells)
 })
-
-
 
 
 

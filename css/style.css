@@ -79,7 +79,6 @@ nav form button {
 SEZIONE QUADRATO GIOCO
 *******************/
 .main_container {
-    /* background-color: #7fffd4; */
     background-image: linear-gradient(to right, #7fffd4, #2adaa2, #2adaa2, #7fffd4);
     padding: 75px 0;
 }
@@ -178,5 +177,10 @@ BANNER OVERLAY VITTORIA/SCONFITTA
 .c_score {
     color: blue;
     font-weight: bold;
+}
+
+.bg_all_bomb {
+    background-color: red;
+    color: white;
 }
 
