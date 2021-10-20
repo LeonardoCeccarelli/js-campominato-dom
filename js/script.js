@@ -23,3 +23,5 @@ btnStartGame.addEventListener("click", function () {
 
     generateCellGrid(rightCells)
 })
+
+console.log(getRightNumBombs(16, 81));

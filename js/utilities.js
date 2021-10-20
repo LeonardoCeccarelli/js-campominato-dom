@@ -86,7 +86,35 @@ function clickChangeColor() {
 }
 
 /**
- * Funzione che genera un numero compreso tra 
+ * Funzione che genera randomicamente n numeri in un range da 1 a 100/81/49
+ * secondo la sceltà dell'utente
+ * 
+ * @param {number} nBomb numero bombe presenti
+ * @param {number} maxNumbRandom rappresenta il limite massimo in cui generare il numero casuale
+ */
+function getRightNumBombs(nBomb, maxNumbRandom) {
+
+    // Creo array vuoto dove verranno inseriri numeri random
+    let bombsArray = []
+
+    // uso while per riempire l'array di numeri casuali evitando
+    // di inserirne 2 o + uguali
+    while (bombsArray.lenght < nBomb) {
+        const singleBomb = getRandomNums(1, maxNumbRandom)
+
+        const bombExisting = bombsArray.includes(singleBomb)
+
+        if (!bombExisting) {
+            bombsArray.push(singleBomb)
+        }
+    }
+
+    return bombsArray;
+}
+
+
+/**
+ * Funzione che genera un numero casuale compreso tra 
  * min (incluso) e max (incluso)
  * 
  * @param {number} min 
