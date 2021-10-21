@@ -93,7 +93,10 @@ function clickChangeColor() {
     // Individuo la cella corrente cliccata
     const currentCell = parseInt(this.textContent)
 
-    if (!cellsBomb.includes(currentCell)) {
+    // se la cella già è stata cliccata il contatore non aumenta
+    if (!cellsBomb.includes(currentCell) && this.classList.contains("active")) {
+        indexWin = indexWin
+    } else if (!cellsBomb.includes(currentCell)) {
         this.classList.add("active")
         indexWin++
     } else {
